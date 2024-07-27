@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  # db:
+  #   image: postgres:16.2
+  #   environment:
+  #     POSTGRES_DB: fx
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: Afin@2000
+  #   networks:
+  #     - app-network
+
+  frontend:
+    image: afingafoor/react-frontend:latest
+    container_name: react-frontend
+    restart: always
+    ports:
+      - "3001:80" 
+    networks:
+      - app-network
+    build:
+      context: ./frontend
+
+  # backend:
+  #   depends_on:
+  #     - db
+  #   image: afingafoor/django-backend:latest
+  #   container_name: django-backend
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8000:8000"
+  #   networks:
+  #     - app-network
+  #   build:
+  #     context: ./backend
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,64 @@
+.page{
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    width: 100%;
+    overflow: hidden;
+}
+
+img{
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+    position: fixed;
+    background-color: white;
+    border: none;
+}
+
+.button-container{
+    display: flex;
+    margin-left: 20px;
+    border: 2px solid grey;
+    content: center;
+    margin-top: 30px;
+    width: 400px;
+    padding: 20px;
+    align-content: center;
+    align-items: center;
+    border-radius:20px;
+    margin:auto;
+    margin-top: 130px;
+
+}
+
+.button{
+    margin-left: 20px;
+    border-radius: 20px;
+    width: 90px;
+    height: 40px;
+    background-color: rgb(40, 85, 136);
+    cursor: pointer;
+    border:none;
+    color: white;
+    text-align: center;
+    
+}
+
+button:hover{
+    transform: scale(1.02);
+    background-color: rgb(42, 43, 32);
+
+}
+
+
+
+
+
+@media(max-width:700px)
+{
+    .button-outer-container{
+        flex:30%;
+        color: blue;
+    }
+}
