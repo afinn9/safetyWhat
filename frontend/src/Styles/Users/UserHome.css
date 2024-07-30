@@ -1,0 +1,30 @@
+/* UserHome.css */
+
+.userhome-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .navbar {
+    width: 200px; /* Adjust as needed */
+    background-color: #f0f0f0;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+  }
+  
+  .main-content {
+    margin-left: 200px; /* Same as Navbar width */
+    padding: 20px;
+    width: calc(100% - 200px); /* Full width minus Navbar width */
+  }
+  
+  .search-users-container {
+    margin-top: 20px;
+  }
+  
