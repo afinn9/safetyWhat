@@ -4,7 +4,6 @@ import { signal } from "@preact/signals-react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 function Login() {
 
     let username = signal("");
@@ -27,23 +26,20 @@ function Login() {
                 response.data.status ? navigate('/userhome') : message.value = 'invalid username or password';
 
             });
-
             
     }
 
     return (
-        <div className='container'>
-            <h1>LOGIN HERE</h1><br/>
-            <div className='box-container'>
+        <div className='login-container'>
+            <h1 className='head' data-testid="head">LOGIN HERE</h1><br/>
                 <form onSubmit={SubmitHandler}>
-                    <label>Username:</label>
-                    <input type='text' value={username} onChange={(e) => (username.value = e.target.value)} className='text-box' /><br /><br />
-                    <label>Password:</label>
-                    <input type='password' value={password} onChange={(e) => (password.value = e.target.value)} className='text-box' /><br /><br /><br />
-                    <input type='submit' name='submit' className='submit'/><br /><br />
+                    <label>Username :</label>
+                    <input type='text' value={username} onChange={(e) => (username.value = e.target.value)} placeholder='Enter Username' className='text-box' /><br /><br />
+                    <label>Password :</label>
+                    <input type='password' value={password} onChange={(e) => (password.value = e.target.value)} placeholder='Enter Password' className='text-box' /><br /><br /><br /><br/>
+                    <input type='submit' value='Submit' className='submit'/><br /><br />
                     {message}
                 </form>
-            </div>
         </div>
     )
 }

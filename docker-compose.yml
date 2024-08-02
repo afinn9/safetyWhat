@@ -14,21 +14,18 @@ services:
 
   frontend:
     build:
-      context: ./frontend 
-    image: react-frontend:latest
-    container_name: react-frontend
-    restart: always
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "80:80"
     networks:
       - app-network
     
-
   backend:
     depends_on:
       - db
     build:
-      context: ./backend 
+      context: ./backend
     image: django-backend:latest
     container_name: django-backend
     restart: always
@@ -37,7 +34,9 @@ services:
     networks:
       - app-network
     environment:
-      DATABASE_URL: postgres://postgres:Afin@2000@db:5432/fx 
+      DATABASE_URL: postgres://postgres:Afin@2000@db:5432/fx
+    volumes:
+      - ./backend/staticfiles:/app/staticfiles
 
 networks:
   app-network:

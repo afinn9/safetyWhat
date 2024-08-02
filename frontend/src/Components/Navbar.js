@@ -1,45 +1,52 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import '../Styles/Navbar.css'
-// import { signal } from '@preact/signals-react';
 
-// let data = signal([]);
-// let array=[]
+import '../Styles/Navbar.css';
 
 function Navbar() {
-  let [data,setData]=useState([])
-  useEffect(()=>{
-    
-    axios.get('http://127.0.0.1:8000/navbar/').then(response => {
-        setData(response.data.data);
-        // console.log(data)
-    })
-  },[])
+  const [data, setData] = useState({});
+  const [dropdowns, setDropdowns] = useState({});
 
-  let navigate=useNavigate()
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get('http://127.0.0.1:8000/navbar/');
+      if (response.data.data.length > 0) {
+        setData(response.data.data[0].name);
+      }
+    };
 
-  let LogoutHandler=()=>{
-    localStorage.removeItem('access')
-    localStorage.removeItem('refresh')
-    navigate('/login',{replace:true})
-  }
-       
+    fetchData();
+  }, []);
+
+
+
+  const toggleDropdown = (key) => {
+    setDropdowns((prevDropdowns) => ({
+      ...prevDropdowns,
+      [key]: !prevDropdowns[key]
+    }));
+  };
 
   return (
-    <div className='navbar-container'>
-      <h3 >SafetyWhat</h3>
+    <div className="navbar-container">
+      <h3 className="s-head">SafetyWhat</h3>
       <hr width="100%" color="green" />
-      <div className='navbar-items'>
-      {
-        data.map((obj, index) => (
-          <h3 key={index} className='items'>{obj.name}</h3>
-        ))
-      }
+      <div className="navbar-items">
+        {Object.entries(data).map(([key, value], index) => (
+          <div key={index} className="items">
+            <h4 onClick={() => toggleDropdown(key)}>{key}</h4>
+            {dropdowns[key] && (
+              <ul>
+                {value.map((item, idx) => (
+                  <h3 key={idx} className="sub-items">{item}</h3>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
       </div>
-      <button onClick={LogoutHandler} className='logout-button'>Logout</button>
     </div>
   );
 }
 
-export default Navbar
+export default Navbar;

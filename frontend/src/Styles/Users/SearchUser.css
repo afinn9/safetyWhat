@@ -26,3 +26,18 @@
 .user-details{
     margin-top: 80px;
 }
+
+.logout-button {
+    margin-left: 650px;
+    border: none;
+    height: 35px;
+    width:90px;
+    background-color:rgb(43, 61, 111);
+    color:white;
+    border-radius: 20px;
+
+  }
+  
+  .logout-button:hover {
+    background-color: #2467b4; 
+  }

@@ -1,16 +1,17 @@
 import React from 'react';
 import Navbar from './Navbar';
 import SearchUser from './SearchUser';
-import '../Styles/Users/UserHome.css'; // Import your CSS file
+import '../Styles/Users/UserHome.css';
 
 function UserHome() {
+
+
   return (
-    <div className="userhome-container">
-      <Navbar />
-      <div className="main-content">
+    <div  className="userhome-container">    
+        <Navbar />
         <SearchUser />
-      </div>
     </div>
+
   );
 }
 

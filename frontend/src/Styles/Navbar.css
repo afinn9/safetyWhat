@@ -1,35 +1,60 @@
 .navbar-container {
+  all: unset;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: flex-start;
-  width: 200px; /* Adjust as needed */
-  height: 100vh; /* Full viewport height */
+  width: 300px;
+  height: 100vh; 
   padding: 10px;
-  background-color: #f0f0f0; /* Background color for the navbar */
-  border-right: 1px solid #ddd; /* Optional border for better visual separation */
+  background-color: #f0f0f0; 
+  border-right: 1px solid #e6e0e0; 
+}
+
+.s-head{
+  color: sienna; 
+  text-align: center;
+  margin-left: 60px;
+  margin-top: 20px;
+  font-size: 30px;
 }
 
 .items{
-
+  margin-top: 30px;
   place-content: center;
   align-content: center;
   align-items: center;
   cursor: pointer;
-  width: 120px;
+  width: 290px;
   height: 50px;
-  margin-top: 30px;
-  margin-left: 20px;
   color: rgb(74, 92, 185);
   padding: 10px;
   font-size: 1rem;
   border-radius: 10px;
-  object-position: center;
+}
+
+.sub-items{
+  margin-top: 30px;
+  place-content: center;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 230px;
+  height: 50px;
+  color: rgb(74, 92, 185);
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+
 }
 
 .items:hover{
-  background-color: #f0f0f0;
-  color: black;
+  background-color: #c3c9ca;
+  color: rgb(61, 61, 61);
+}
+
+.sub-items:hover{
+  background-color: #d3cdcd;
+  color: rgb(63, 62, 62);
 }
 
 .navbar-items {
@@ -43,24 +68,11 @@
   margin: 5px 0;
 }
 
-.logout-button {
-  align-self: flex-start;
-  margin-top: auto; /* Pushes the button to the bottom */
-  padding: 10px 20px;
-  background-color: #4b4545; /* Red background for the logout button */
-  border: none;
-  color: white;
-  cursor: pointer;
-  text-align: center;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-}
-
-.logout-button:hover {
-  background-color: #615757; 
-}
 
 .items:hover {
-  background-color: #615757; 
+  background-color: #cfc8c8; 
+}
+
+.sub-items:hover {
+  background-color: #cfc8c8; 
 }

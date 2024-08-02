@@ -29,16 +29,15 @@ def login(request):
 class UserCreateView(generics.CreateAPIView):
     serializer_class = UserSerializer
 
-@api_view(['GET'])
+@api_view(['GET','POST'])
 def navbar(request):
     data=NavbarContent.objects.all()
-    print(data)
     serializer=NavbarContentSerializer(data,many=True)
+    print(serializer.data)
     return Response({"data":serializer.data})
 
 @api_view(['GET'])
 def userlist(request):
     data=User.objects.all()
-    print(data)
     serializer=UserSerializer(data,many=True)
     return Response({"data":serializer.data})

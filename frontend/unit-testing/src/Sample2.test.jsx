@@ -1,7 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import Sample2 from '../../src/Components/Sample2';
-import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
+import { MemoryRouter } from 'react-router-dom'; 
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom';
+
 
 describe("Sample2", () => {
 
@@ -22,8 +24,7 @@ describe("Sample2", () => {
                 <Sample2 />
             </MemoryRouter>
         );
-
-        expect(screen.getByTestId("span")).toBeInTheDocument();
+        expect(screen.getByTestId("span")).toHaveTextContent(0)
     });
 
     it("should check user interactive handling", async () => {
