@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
 import '../Styles/Navbar.css';
+import useGlobalState from './GlobalState';
 
 function Navbar() {
   const [data, setData] = useState({});
   const [dropdowns, setDropdowns] = useState({});
+  
+  const { listState, setListState } = useGlobalState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,14 +20,22 @@ function Navbar() {
     fetchData();
   }, []);
 
-
-
   const toggleDropdown = (key) => {
     setDropdowns((prevDropdowns) => ({
       ...prevDropdowns,
       [key]: !prevDropdowns[key]
     }));
   };
+
+  const keyHandler = (key) => {
+    if (key === 'Users') {
+      setListState(true);
+    }
+  };
+
+  useEffect(() => {
+    console.log("listState:", listState);
+  }, [listState]);
 
   return (
     <div className="navbar-container">
@@ -34,7 +44,7 @@ function Navbar() {
       <div className="navbar-items">
         {Object.entries(data).map(([key, value], index) => (
           <div key={index} className="items">
-            <h4 onClick={() => toggleDropdown(key)}>{key}</h4>
+            <h4 onClick={() => { toggleDropdown(key); keyHandler(key); }}>{key}</h4>
             {dropdowns[key] && (
               <ul>
                 {value.map((item, idx) => (

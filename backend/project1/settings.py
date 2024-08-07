@@ -311,3 +311,12 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'afingafoorku@gmail.com'
+EMAIL_HOST_PASSWORD = 'qnwc rsxh nefq ywlp '
+EMAIL_USE_TLS =True
+EMAIL_USE_SSL = False

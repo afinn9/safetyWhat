@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './Navbar';
-import SearchUser from './SearchUser';
+import SearchUser from './UserContent';
 import '../Styles/Users/UserHome.css';
 
 function UserHome() {

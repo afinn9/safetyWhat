@@ -1,0 +1,138 @@
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    flex-grow: 1; 
+    margin: 0 40px;
+  }
+  
+  .header {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .search-bar-container {
+    display: flex;
+    align-items: center;
+ 
+    margin: 10px 0;
+  }
+  
+  .search-bar {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .button{
+    width: 180px;
+    height: 40px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #141533;
+    cursor: pointer;
+  }
+  
+  
+  .button:hover {
+    background-color: #94abc4;
+    color: black;
+  
+  }
+  
+  .user-details {
+    width: 100%;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .user-details h3 {
+    color: #007bff;
+    font-size: 20px;
+  }
+  
+  .user-details p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+  }
+
+
+  .user-details-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-details-table th, .user-details-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .user-details-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .user-details-table td {
+    background-color: #ffffff;
+  }
+  
+
+
+  p{
+    margin-top: 100px;
+    font-size: 25px;
+  }
+
+
+@media (max-width: 768px) {
+  .search-bar-container {
+    flex-direction: column;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+
+  .button{
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .search-bar {
+    font-size: 14px;
+  }
+
+  .button{
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .user-details h3 {
+    font-size: 18px;
+  }
+
+  .user-details p {
+    font-size: 14px;
+  }
+}
